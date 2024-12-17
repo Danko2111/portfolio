@@ -8,22 +8,10 @@ import { SiGmail } from "react-icons/si";
 import { IoMdCheckmark } from "react-icons/io";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default function Body() {
   const [isResumeCopiedActive, setIsResumeCopiedActive] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-
-  const router = useRouter();
-
-  const navigateInternal = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    url: string
-  ) => {
-    e.stopPropagation();
-    e.preventDefault();
-    router.push(`${url}`);
-  };
 
   const showCopied = () => {
     const textToCopy = "daniel.kolesnitski@gmail.com";
@@ -65,7 +53,7 @@ export default function Body() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   return (
     <div className="flex-1 lg:flex lg:justify-between lg:gap-4 min-h-screen px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0 max-w-[1400px] mx-auto">
