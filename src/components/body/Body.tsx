@@ -53,7 +53,7 @@ export default function Body() {
     });
 
     return () => observer.disconnect();
-  }, [sections]);
+  }, []);
 
   return (
     <div className="flex-1 lg:flex lg:justify-between lg:gap-4 min-h-screen px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0 max-w-[1400px] mx-auto">
